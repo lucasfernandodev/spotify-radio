@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to remote",
+      "address": "192.168.42.129", // <- remote address here
+      "port": 6666
+    }
+  ]
+}
