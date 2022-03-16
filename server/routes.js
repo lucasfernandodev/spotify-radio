@@ -66,6 +66,7 @@ async function routes(req, res){
 }
 
 export function handlerError(error, res){
+  
   if(error.message.includes("ENOENT")){
     logger.warn(`asset not found ${error.stack}`)
     res.writeHead(404)
