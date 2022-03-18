@@ -1,0 +1,21 @@
+version: '2.1'
+
+services: 
+  live-reload:
+    image: spotify-radio
+    build: .
+    enviroment:
+      PORT: 6666
+    command: 
+    - npm
+    - run
+    - live-reload
+    volumes:
+    - .:/spotify-radio
+    - node_modules:/spotify-radio/node_modules
+    ports: 
+    - 6000:6000
+
+volumes:
+  node_modules: {}
+
