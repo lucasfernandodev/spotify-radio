@@ -7,7 +7,7 @@ const audioDirectory = join(root, "audio");
 const publicDirectory = join(root, "public");
 
 export default {
-  port: process.env.PORT || 6666,
+  port: process.env.PORT || 3000,
   dir: {
     root,
     audioDirectory,
