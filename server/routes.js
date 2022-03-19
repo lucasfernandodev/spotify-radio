@@ -14,6 +14,8 @@ const {
 } = config;
 
 const controller = new Controller();
+
+
 async function routes(req, res){
   const {method, url} = req;
 
@@ -41,6 +43,18 @@ async function routes(req, res){
     return stream.pipe(res);
   }
 
+  if(method === "GET" && url.includes("/stream")){
+    const {stream, onClose} = controller.createClientStream();
+
+    req.once("close", onClose());
+
+    res.writeHead(200, {
+      'content-type': 'audio/mpeg',
+      'Accept-ranges': 'bytes'
+    });
+
+    return stream.pipe(res);
+  }
 
   // files
   if(method === "GET"){

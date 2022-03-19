@@ -2,7 +2,8 @@ import fs from "fs";
 import fsPromises from 'fs/promises'
 import config from './config.js';
 import {join, extname} from "path";
-
+import { randomUUID } from "crypto";
+import { PassThrough } from "stream";
 const {
   dir : {
     publicDirectory
@@ -10,6 +11,26 @@ const {
 } = config;
 
 export class Service {
+
+  constructor(){
+    this.clientStream = new Map();
+  }
+
+  createClientStream(){
+    const id = randomUUID();
+    const clientStream = new PassThrough();
+    this.clientStream.set(id, clientStream);
+
+    return {
+      id,
+      clientStream
+    }
+  }
+  
+  removeClientStream(id){
+    this.clientStream.delete(id)
+  }
+
   createFileStream(filename){
     return fs.createReadStream(filename)
   }
