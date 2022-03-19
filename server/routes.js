@@ -44,13 +44,14 @@ async function routes(req, res){
   }
 
   if(method === "GET" && url.includes("/stream")){
+
     const {stream, onClose} = controller.createClientStream();
 
-    req.once("close", onClose());
+    req.once("close", onClose);
 
     res.writeHead(200, {
       'content-type': 'audio/mpeg',
-      'Accept-ranges': 'bytes'
+      'Accept-Rages': 'bytes'
     });
 
     return stream.pipe(res);

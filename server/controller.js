@@ -12,7 +12,7 @@ export class Controller{
   }
 
   createClientStream(){
-    const {id, clientStream} = this.service.getClientStream();
+    const {id, clientStream} = this.service.createClientStream();
 
     const onClose = () => {
       logger.info(`closing connection of ${id}`);

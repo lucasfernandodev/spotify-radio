@@ -31,6 +31,7 @@ export default {
     audioMediaType: 'mp3',
     songVolume: '0.99',
     fallBackBitrate: "128000",
+    bitRateDivisor: 8,
     englishConversation: join(songsDirectory, "conversation.mp3")
   }
 }

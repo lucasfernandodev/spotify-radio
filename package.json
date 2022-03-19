@@ -10,7 +10,7 @@
     "test": "LOG_DISABLED=true NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest --no-cache",
     "test:watch": "LOG_DISABLED=true NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest --no-cache --runInBand --detectOpenHandles --watchAll",
     "test:coverage": "LOG_DISABLED=true NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest --no-cache --runInBand --detectOpenHandles --coverage tests/unit",
-    "live-reload:docker": "docker-compose up live-reload"
+    "live-reload:docker": "docker-compose up --build live-reload"
   },
   "engines": {
     "node": "17"

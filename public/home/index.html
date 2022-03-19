@@ -177,7 +177,7 @@
     // bypass Prevent cache
 
     window.onload = () => {
-      document.getElementById('audio').src = "/stream?id=" + Date.now();
+      document.querySelector('audio').src = "/stream?id=" + Date.now();
     }
   </script>
 </body>
