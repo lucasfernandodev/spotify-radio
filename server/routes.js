@@ -1,7 +1,7 @@
 import {logger} from './util.js';
 import config from './config.js';
 import {Controller} from './controller.js';
-
+import { once } from 'events';
 const {
   location,
     pages : {
@@ -55,6 +55,14 @@ async function routes(req, res){
     });
 
     return stream.pipe(res);
+  }
+
+  if(method === "POST" && url === "/controller"){
+    const data = await once(req, 'data');
+    const item = JSON.parse(data);
+
+    const result = await controller.handleCommand(item)
+    return res.end(JSON.stringify(result))
   }
 
   // files
