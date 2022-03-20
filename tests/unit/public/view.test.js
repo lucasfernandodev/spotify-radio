@@ -21,7 +21,7 @@ describe("#View ~ Test suit for presentation layer", () => {
     }
   }){
     return {
-      onclick: jest.fn(),
+      onClick: jest.fn(),
       classList,
       innerText: text
     }
@@ -30,11 +30,6 @@ describe("#View ~ Test suit for presentation layer", () => {
   beforeEach(() => {
     jest.resetAllMocks();
     jest.clearAllMocks();
-
-    jest.spyOn(
-      document,
-      document.getElementById.name
-    ).mockReturnValue(makeBtnElement())
   })
 
   test('#changeCommandBtnsVisibility ~ given hide=true it should add unassigned class and reset onClick', async () => {
@@ -44,17 +39,49 @@ describe("#View ~ Test suit for presentation layer", () => {
     const btn = makeBtnElement();
     jest.spyOn(
       document,
-      document.querySelectorAll.name
+      'querySelectorAll'
     ).mockReturnValue([btn]);
 
     view.changeCommandBtnsVisibility();
 
     expect(btn.classList.add).toHaveBeenCalledWith('unassigned')
+    expect(btn.onClick.name).toStrictEqual('onClickReset');
+
+    expect(() => btn.onClick()).not.toThrow();
+
 
   });
 
-  test.todo('#changeCommandBtnsVisibility ~ given hide=false it should remove unassigned class and reset onClick');
-  test.todo('#onLoad');
+  test('#changeCommandBtnsVisibility ~ given hide=false it should remove unassigned class and reset onClick', async () => {
+    const view = new View;
+
+    const btn = makeBtnElement();
+    jest.spyOn(
+      document,
+      'querySelectorAll'
+    ).mockReturnValue([btn]);
+
+    view.changeCommandBtnsVisibility(false);
+
+    expect(btn.classList.add).not.toHaveBeenCalled()
+    expect(btn.classList.remove).toHaveBeenCalledWith('unassigned')
+    expect(btn.onClick.name).toStrictEqual('onClickReset');
+
+    expect(() => btn.onClick()).not.toThrow();  // test
+  });
+  
+  test('#onLoad', async () => {
+    const view = new View();
+
+    jest.spyOn(
+      view,
+      view.changeCommandBtnsVisibility.name
+    ).mockReturnValue();
+
+    view.onLoad();
+
+    expect(view.changeCommandBtnsVisibility).toHaveBeenCalled();
+  });
 
 
 })
