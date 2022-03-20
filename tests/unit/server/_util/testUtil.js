@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 import { jest } from "@jest/globals";
-import {Readable, Writable} from "stream";
+import {PassThrough, Readable, Writable} from "stream";
 
 
 export default class TestUtil{
@@ -17,6 +17,10 @@ export default class TestUtil{
     });
   }
 
+  static generatePassThroughStream(){
+    return new PassThrough;
+  }
+
   static generateWritableStream(ondata){
     return new Writable({
       write(chunk, enc, cb){
@@ -26,8 +30,8 @@ export default class TestUtil{
     });
   }
 
-  static defaultHandlerParams(){
-    const requestStream = TestUtil.generateReadableStream(['body da requisição'])
+  static defaultHandlerParams(requestData = 'data'){
+    const requestStream = TestUtil.generateReadableStream([requestData])
     const response = TestUtil.generateWritableStream(() => {});
     const data = {
       resquest: Object.assign(requestStream,{
@@ -46,4 +50,6 @@ export default class TestUtil{
       ...data
     }
   } 
+
+
 }

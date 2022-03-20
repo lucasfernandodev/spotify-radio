@@ -103,7 +103,7 @@ export class Service {
 
   async startStreaming(){
     logger.info(`stating with ${this.currentSong}`);
-    const bitRate = this.currentBitRate = (await this.getBitRate(this.currentSong) / bitRateDivisor);
+    const bitRate = this.currentBitRate = (await this.getBitRate(this.currentSong)) / bitRateDivisor;
     const throttleTransform = this.throttleTransform = new Throttle(bitRate);
     const songReadable = this.currentReadable = this.createFileStream(this.currentSong)
 

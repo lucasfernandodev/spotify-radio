@@ -3,6 +3,7 @@ import config from "../../../server/config.js";
 import TestUtil from './_util/testUtil.js';
 import { handler } from "../../../server/routes.js";
 import { Controller } from '../../../server/controller.js';
+import { Service } from '../../../server/service.js';
 
 const {
   pages,
@@ -86,8 +87,6 @@ describe("#Routes - test site for api response", () => {
 
   });
 
-
-
   test('GET /index.html - Should response with file stream', async () => {
     const params = TestUtil.defaultHandlerParams();
     const fileName = '/index.html'
@@ -147,6 +146,65 @@ describe("#Routes - test site for api response", () => {
     expect(params.response.writeHead).not.toHaveBeenCalled()
   })
 
+  test("GET /stream - Should response with audio stream", async () =>  {
+    const params = TestUtil.defaultHandlerParams();
+
+    params.resquest.method = "GET"
+    params.resquest.url = "/stream?id=100101";
+
+    const clientStreamMock = TestUtil.generatePassThroughStream();
+
+    const onClose = jest.fn();
+
+    jest.spyOn(
+      Controller.prototype,
+      Controller.prototype.createClientStream.name
+    ).mockReturnValue({
+      stream: clientStreamMock,
+      onClose
+    })
+
+    jest.spyOn(clientStreamMock, 'pipe').mockReturnValue();
+
+    await handler(...params.values());
+
+
+    expect(Controller.prototype.createClientStream).toHaveBeenCalled();
+    expect(clientStreamMock.pipe).toHaveBeenCalledWith(params.response);
+    expect(params.response.writeHead).toHaveBeenCalledWith(200, {
+      'content-type': 'audio/mpeg',
+				'Accept-Rages': 'bytes'
+    })
+  })
+
+  test("POST / controller - Should call handleCommand", async () => {
+    const params = TestUtil.defaultHandlerParams();
+
+    params.resquest.method = "POST";
+    params.resquest.url = "/controller";
+
+    const body = {
+      command : "start"
+    }
+
+
+
+    const jsonResult = {
+      ok: "1"
+    }
+
+    jest.spyOn(
+      Controller.prototype,
+      Controller.prototype.handleCommand.name
+    ).mockResolvedValue(jsonResult)
+
+    params.resquest.push(JSON.stringify(body))
+
+      await handler(...params.values());
+
+      expect(Controller.prototype.handleCommand).toHaveBeenCalledWith(body);
+      expect(params.response.end).toHaveBeenCalledWith((JSON.stringify(jsonResult))) //test
+  })
 
   test('GET /unknown - given an inexistent  route it should response with 404', async () => {
     const params = TestUtil.defaultHandlerParams();
