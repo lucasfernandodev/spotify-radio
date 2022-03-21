@@ -25,6 +25,9 @@ export class Controller{
       return result
     }
 
+    const chosenSongFx = await this.service.readFxByName(cmd);
+    logger.info(`Add Fx to service: ${chosenSongFx}`)
+    this.service.appendFxStream(chosenSongFx)
     return result
   };
 
