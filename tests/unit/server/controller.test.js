@@ -106,8 +106,7 @@ describe("#controller - test suit for API control", () => {
       expect(Service.prototype.startStreaming).toHaveBeenCalled()
     })
 
-    test("non existing command", async () => {
-    
+    test.skip("non existing command", async () => {
 
       jest.spyOn(
         Service.prototype,
