@@ -1,6 +1,6 @@
 build:
   docker:
-    web: DockerFile
+    web: Dockerfile
   config:
     PORT: 3000
 
