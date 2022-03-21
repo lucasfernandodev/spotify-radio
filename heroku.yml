@@ -4,4 +4,5 @@ build:
   config:
     PORT: 3000
 
-run: npm start
+run: 
+  web: npm start
