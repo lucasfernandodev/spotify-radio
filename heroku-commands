@@ -1,0 +1,10 @@
+heroku.yrm
+
+npm i -g heroku
+
+heroku login
+npx gitignore node
+
+heroku apps:create spotify-radio-lucasfernandodev
+
+heroku stack:set container

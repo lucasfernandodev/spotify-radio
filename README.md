@@ -23,7 +23,7 @@ Marque esse projeto com uma estrela 🌟
 - Web App 
     - Client
         - [x] Deve reproduzir a transmissão
-        - [ ] Não deve pausar se algum efeito for adicionado
+        - [x] Não deve pausar se algum efeito for adicionado
     - Controller
         - [ ] Deve atingir 100% de cobertura de código em testes
         - [x] Deve poder iniciar ou parar uma transmissão 
