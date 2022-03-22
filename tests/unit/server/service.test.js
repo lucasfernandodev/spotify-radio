@@ -96,7 +96,7 @@ describe('#service - test suite for API service', () => {
     expect(serviceReturn.type).toStrictEqual(expectedType);
   });
 
-  test('removeclientStream', async () => {
+  test('removeClientStream', async () => {
     const service = new Service ();
 
     jest.spyOn(
@@ -109,7 +109,6 @@ describe('#service - test suite for API service', () => {
 
     expect(service.clientStreams.delete).toHaveBeenCalledWith(mockId);
   })
-
 
   test('createClientStream', async () => {
     const service = new Service ();

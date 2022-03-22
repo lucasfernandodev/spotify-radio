@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647903391080" clover="3.2.0">
-  <project timestamp="1647903391080" name="All files">
-    <metrics statements="172" coveredstatements="147" conditionals="50" coveredconditionals="47" methods="45" coveredmethods="40" elements="267" coveredelements="234" complexity="0" loc="172" ncloc="172" packages="2" files="6" classes="6"/>
+<coverage generated="1647951235954" clover="3.2.0">
+  <project timestamp="1647951235955" name="All files">
+    <metrics statements="172" coveredstatements="151" conditionals="50" coveredconditionals="48" methods="45" coveredmethods="40" elements="267" coveredelements="239" complexity="0" loc="172" ncloc="172" packages="2" files="6" classes="6"/>
     <package name="public.controller.js">
       <metrics statements="44" coveredstatements="44" conditionals="12" coveredconditionals="12" methods="18" coveredmethods="18"/>
       <file name="view.js" path="/spotify-radio/public/controller/js/view.js">
@@ -53,7 +53,7 @@
       </file>
     </package>
     <package name="server">
-      <metrics statements="128" coveredstatements="103" conditionals="38" coveredconditionals="35" methods="27" coveredmethods="22"/>
+      <metrics statements="128" coveredstatements="107" conditionals="38" coveredconditionals="36" methods="27" coveredmethods="22"/>
       <file name="config.js" path="/spotify-radio/server/config.js">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
         <line num="4" count="3" type="stmt"/>
@@ -63,21 +63,21 @@
         <line num="8" count="3" type="stmt"/>
       </file>
       <file name="controller.js" path="/spotify-radio/server/controller.js">
-        <metrics statements="20" coveredstatements="16" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="5"/>
-        <line num="7" count="6" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="18" count="2" type="cond" truecount="2" falsecount="0"/>
+        <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="18" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="23" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
@@ -130,11 +130,11 @@
       <file name="service.js" path="/spotify-radio/server/service.js">
         <metrics statements="62" coveredstatements="41" conditionals="6" coveredconditionals="4" methods="18" coveredmethods="13"/>
         <line num="26" count="3" type="stmt"/>
-        <line num="31" count="18" type="stmt"/>
-        <line num="32" count="18" type="stmt"/>
-        <line num="33" count="18" type="stmt"/>
-        <line num="34" count="18" type="stmt"/>
-        <line num="35" count="18" type="stmt"/>
+        <line num="31" count="19" type="stmt"/>
+        <line num="32" count="19" type="stmt"/>
+        <line num="33" count="19" type="stmt"/>
+        <line num="34" count="19" type="stmt"/>
+        <line num="35" count="19" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>

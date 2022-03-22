@@ -36,7 +36,7 @@ describe("#controller - test suit for API control", () => {
     })
   })
 
-  test("getFileStream - Should response with audio stream", async () =>  {
+  test("getFileStream - Should response with audio stream", async () => {
     const mockStream = TestUtil.generateReadableStream(['teste']);
     const mockId = "1";
 
@@ -54,7 +54,7 @@ describe("#controller - test suit for API control", () => {
     ).mockReturnValue()
 
     const controller = new Controller();
-    const {onClose, stream} = controller.createClientStream();
+    const { onClose, stream } = controller.createClientStream();
 
     onClose()
 
@@ -74,7 +74,7 @@ describe("#controller - test suit for API control", () => {
       const controller = new Controller();
 
       const data = {
-        command : "stop"
+        command: "stop"
       }
 
       const result = await controller.handleCommand(data);
@@ -95,7 +95,7 @@ describe("#controller - test suit for API control", () => {
       const controller = new Controller();
 
       const data = {
-        command : "START"
+        command: "START"
       }
 
       const result = await controller.handleCommand(data);
@@ -110,13 +110,13 @@ describe("#controller - test suit for API control", () => {
 
       jest.spyOn(
         Service.prototype,
-       'startStreaming'
+        'startStreaming'
       ).mockResolvedValue();
 
       const controller = new Controller();
 
       const data = {
-        command : "NON EXISTING"
+        command: "NON EXISTING"
       }
 
       const result = await controller.handleCommand(data);
@@ -125,6 +125,35 @@ describe("#controller - test suit for API control", () => {
       }) //test
 
       expect(Service.prototype.startStreaming).not.toHaveBeenCalled()
+    })
+
+    test('command fxName', async () => {
+      const fxName = "applause";
+
+      const mock1 = jest.spyOn(
+        Service.prototype,
+        Service.prototype.readFxByName.name,
+      ).mockResolvedValue(fxName)
+      
+      const mock2 = jest.spyOn(
+        Service.prototype,
+        Service.prototype.appendFxStream.name
+      ).mockReturnValue()
+
+      const controller = new Controller();
+
+      const data = {
+        command: 'My_FX_Name'
+      }
+
+      const result = await controller.handleCommand(data);
+      expect(result).toStrictEqual({
+        result: 'ok'
+      })
+
+      expect(mock1).toHaveBeenCalledWith(data.command.toLowerCase())
+      expect(mock2).toHaveBeenCalledWith(fxName)
+
     })
   })
 })
