@@ -135,10 +135,11 @@ describe("API E2E Suite Test", () =>{
         [buffer]
       ] = onChunk.mock.calls;
 
-      server.kill();
+
       expect(buffer).toBeInstanceOf(Buffer);
       expect(buffer.length).toBeGreaterThan(1000)
 
+            server.kill();
     });
 
     

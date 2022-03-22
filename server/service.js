@@ -167,9 +167,10 @@ export class Service {
 
     const unpipe = () => {
       const transformStream = this.mergeAudioStreams(fx, this.currentReadable)
-      this.currentReadable.removeListener('unpipe', unpipe);
-      this.currentReadable = transformStream
+
       this.throttleTransform = throttleTransform;
+      this.currentReadable = transformStream
+      this.currentReadable.removeListener('unpipe', unpipe);
 
       streamsPromises.pipeline(
         transformStream,
