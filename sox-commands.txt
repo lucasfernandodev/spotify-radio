@@ -9,11 +9,11 @@ sox \
 // converte para o mesmo Bitrate 
 sox \
   -v 0.99 \
-  -t mp3 \
-  "audio/fx/Applause Sound Effect HD No Copyright (128 kbps).mp3" \
+  -t wav \
+  "Mysterious Sound.wav" \
   -r 48000 \
   -t mp3 \
-  "output.mp3"
+  "audio/fx/Mysterious Sound.mp3"
 
 // obtém o Bitrate
 sox \
