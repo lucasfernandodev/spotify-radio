@@ -19,23 +19,23 @@ img {
 
 button {
   cursor: pointer;
-  background: #00ff00e8;
+  background: #2ecc71;
   border: none;
   border-radius: 15px;
   font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
   transition: all 250ms;
-  box-shadow: 1px 1px 0px #0e3c17,
-              1px 2px 0px #0e3c17,
-              1px 3px 0px #0e3c17,
-              1px 4px 0px #0e3c17,
-              1px 5px 0px #0e3c17,
-              1px 6px 0px #0e3c17,
-              1px 7px 0px #0e3c17;
+  box-shadow: 1px 1px 0px #175f43,
+              1px 2px 0px #175f43,
+              1px 3px 0px #175f43,
+              1px 4px 0px #175f43,
+              1px 5px 0px #175f43,
+              1px 6px 0px #175f43,
+              1px 7px 0px #175f43;
 }
 
 button.active {
-  background: yellow;
+  background: #f1c40f;
   box-shadow: none;
   top: 2.5px;
   position: relative;
@@ -54,7 +54,7 @@ button.active {
 }
 
 button.unassigned {
-  background: #0f5e2a;
+  background: #175f43;
 }
 
 section {

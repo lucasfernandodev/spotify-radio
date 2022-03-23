@@ -1,4 +1,4 @@
-@import url("https://fonts.cdnfonts.com/css/gotham");
+/* @import url("https://fonts.cdnfonts.com/css/gotham"); */
 
 /* Spotify color palette */
 :root {
@@ -10,7 +10,7 @@
 
 html,
 body {
-  font-family: "Gotham", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -20,12 +20,14 @@ body {
 .container__sidebar {
   display: flex;
   flex-direction: column;
+  align-items: start;
   height: 100%;
   position: fixed;
   gap: 3rem;
-  padding: 0 5rem 0 1.5rem;
+  padding: 0 0 0 1.5rem;
   color: var(--sidebar-color);
   background: var(--sidebar-background);
+  min-width: 250px;
 }
 
 .container__sidebar__brand {
@@ -57,10 +59,12 @@ body {
 }
 
 .container__section {
-  width: 100%;
+  width: calc(100% - 250px);
+  position:relative;
+  left: 250px;
   min-height: 100vh;
   background: linear-gradient(120deg, #339933, #191414);
-  padding: 1.3rem 0 7rem 15rem;
+  padding-bottom: 100px;
 }
 
 .container__section__arrow {
@@ -75,7 +79,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 16px 2rem;
 }
 
 .container__section__user {
@@ -106,7 +110,6 @@ body {
 .container__section__radio-header__image img {
   width: 180px;
   height: 180px;
-  border-radius: 8px;
   background: linear-gradient(120deg, #211c27, #191414);
   box-shadow: 0px 0px 17px -3px #000000;
 }
@@ -138,6 +141,7 @@ body {
   flex-direction: column;
   padding: 1.3rem 2rem 0 2rem;
   color: #e4e4e4;
+  background: linear-gradient(120deg, #339933, #191414);
 }
 
 .container__section__cards__actions-btn {
@@ -150,11 +154,17 @@ body {
 .container__section__cards__actions-btn p {
   font-size: 0.6rem;
   text-transform: uppercase;
-  border: #e4e4e4 solid 1px;
+  background: #111;
+  border: unset;
+  color: #ccdcdc;
   padding: 0.4rem 0.8rem;
   border-radius: 3px;
   width: 40px;
   text-align: center;
+  font-family: 'roboto',sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.07rem;
 }
 
 .container__section__cards h3 {
@@ -186,19 +196,22 @@ body {
 .container__section__content__cards h4 {
   font-weight: 600;
   margin: 0.8rem 0;
+  letter-spacing: 0.04rem;
 }
 
 .container__section__content__cards p {
-  color: #bebebe;
-  font-size: 0.8rem;
+  color: #aaa;
+  font-size: 15px;
   margin: 0.8rem 0;
-  line-height: normal;
+  line-height: 1.3rem;
+  letter-spacing: 0.02rem;
   text-align: justify;
+  font-weight: 400;
 }
 
 .container__section__content__cards__divider {
   width: 100%;
-  border-bottom: solid #58585886 0.1rem;
+  border-bottom: solid #33993355 0.1rem;
   margin-top: 1rem;
 }
 
@@ -316,40 +329,53 @@ body {
   gap: 0.5rem;
 }
 .audio-player #playAudio {
+  opacity: 0.4;
   -webkit-appearance: none;
   outline: none;
   cursor: pointer;
   border: none;
   width: 30px;
   height: 30px;
-  background: url("https://img.icons8.com/FFFFFF/play") no-repeat center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.5' stroke='BlanchedAlmond' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M7 4v16l13 -8z' /%3E%3C/svg%3E") no-repeat center;
   background-size: contain;
 }
 .audio-player #playAudio.pause {
-  background: url("https://img.icons8.com/FFFFFF/pause") no-repeat center;
+  opacity: 0.4;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.5' stroke='BlanchedAlmond' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Crect x='6' y='5' width='4' height='14' rx='1' /%3E%3Crect x='14' y='5' width='4' height='14' rx='1' /%3E%3C/svg%3E") no-repeat center;
   background-size: contain;
 }
+
 .audio-player #nextAudio {
+  opacity: 0.4;
   -webkit-appearance: none;
   outline: none;
   cursor: pointer;
   border: none;
   width: 30px;
   height: 30px;
-  background: url("https://img.icons8.com/FFFFFF/end") no-repeat center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.5' stroke='BlanchedAlmond' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M4 5v14l12 -7z' /%3E%3Cline x1='20' y1='5' x2='20' y2='19' /%3E%3C/svg%3E") no-repeat center;
   background-size: contain;
 }
 .audio-player #previousAudio {
+  opacity: 0.4;
   -webkit-appearance: none;
   outline: none;
   cursor: pointer;
   border: none;
   width: 30px;
   height: 30px;
-  background: url("https://img.icons8.com/FFFFFF/skip-to-start") no-repeat
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.5' stroke='BlanchedAlmond' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M20 5v14l-12 -7z' /%3E%3Cline x1='4' y1='5' x2='4' y2='19' /%3E%3C/svg%3E") no-repeat
     center;
   background-size: contain;
 }
+.audio-player #playAudio, .audio-player #previousAudio, .audio-player #nextAudio,.audio-player #playAudio.pause{
+  transition: 350ms linear;
+}
+
+.audio-player #playAudio:hover, .audio-player #previousAudio:hover, .audio-player #nextAudio:hover,.audio-player #playAudio.pause:hover{
+  opacity: 1;
+}
+
 .player-controls-row {
   display: flex;
   align-items: center;
@@ -391,9 +417,13 @@ body {
   .container {
     flex-direction: column;
   }
+
   .container__section {
     padding: 1.3rem 0 5rem 0;
+    width: 100%;
+    left: unset;
   }
+
   .container__section__content {
     flex-direction: column-reverse;
     gap: 2rem;

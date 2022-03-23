@@ -42,7 +42,7 @@ function calculateCurrentValue(currentTime) {
 function initProgressBar() {
   const currentTime = calculateCurrentValue(media.currentTime);
   $(ui.currentTime).innerHTML = currentTime;
-  $(ui.duration).innerHTML = calculateCurrentValue(media.duration);
+  $(ui.duration).innerHTML = calculateCurrentValue(media.currentTime);
   $(ui.seekObj).addEventListener("click", seek);
 
   media.onended = () => {
