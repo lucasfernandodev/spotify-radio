@@ -35,9 +35,9 @@ Marque esse projeto com uma estrela 🌟
 - Aula 02: Manter 100% de code coverage e implementar testes e2e para toda a API
 - Aula 03: implementar testes unitários para o frontend e manter 100% de code coverage
 - **PLUS**: 
-    - [ ] disponibilizar um novo efeito
-        - [ ] adicionar um botão novo no controlador
-        - [ ] adicionar um som de efeito novo para a pasta `audios/fx/`
+    - [x] disponibilizar um novo efeito
+        - [x] adicionar um botão novo no controlador
+        - [x] adicionar um som de efeito novo para a pasta `audios/fx/`
         - [ ] republicar no heroku
 
 ### Considerações

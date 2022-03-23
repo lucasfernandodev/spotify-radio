@@ -3,7 +3,7 @@ html, body {
   display: grid;
   place-items: center center;
   background: #daf7de;
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Roboto', sans-serif;
   min-height: 100vh;
 }
 
@@ -22,7 +22,7 @@ button {
   background: #00ff00e8;
   border: none;
   border-radius: 15px;
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
   transition: all 250ms;
   box-shadow: 1px 1px 0px #0e3c17,
