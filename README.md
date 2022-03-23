@@ -66,5 +66,5 @@ Marque esse projeto com uma estrela 🌟
     - Verifique a versão do seu Node.js. Estamos usando na versão 17. Entre no [site do node.js](https://nodejs.org) e baixe a versão mais recente.
 
 ## Dê uma olhada na aplicação do heroku
-- [Home](https://spotify-radio-lucasfernandodev.herokuapp.com/home);
-- [Controller](https://spotify-radio-lucasfernandodev.herokuapp.com/controller);
+- [Home](https://spotify-radio-lucasfernandodev.herokuapp.com/home)
+- [Controller](https://spotify-radio-lucasfernandodev.herokuapp.com/controller)
