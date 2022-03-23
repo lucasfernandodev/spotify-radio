@@ -56,6 +56,7 @@ Marque esse projeto com uma estrela 🌟
 - [Boo](https://youtu.be/rYAQN11a2Dc)
 - [Fart](https://youtu.be/4PnUfYhbDDM)
 - [Laugh](https://youtu.be/TZ90IUrMNCo)
+- [Mysterious Sound](https://opengameart.org/content/mysterious-sound)
 ## FAQ 
 - `NODE_OPTIONS` não é um comando reconhecido pelo sistema, o que fazer?
     - Se você estiver no Windows, a forma de criar variáveis de ambiente é diferente. Você deve usar a palavra `set` antes do comando. 
